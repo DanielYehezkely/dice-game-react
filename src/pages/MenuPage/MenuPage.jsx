@@ -25,7 +25,7 @@ const MenuPage = ({onStartGame}) => {
   return (
     <div className="menu-box">
       <div className="dice-headline">
-        Dice Game <img src="/public/assets/images/dice.png" alt="" />
+        Dice Game <img src="/assets/images/dice.png" alt="" />
       </div>
       <InstructionsComponent/>
       <h1>Please select a target score</h1>
