@@ -1,0 +1,11 @@
+.dices-and-btns {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 10%;
+  top: 0;
+  left: 45%;
+}

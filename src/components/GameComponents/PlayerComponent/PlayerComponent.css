@@ -1,0 +1,48 @@
+.player-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30rem;
+}
+.current-player {
+  background-color: #f0a0a093;
+  border: 1px solid black;
+  box-shadow: 1px 1px 10px 1px black;
+}
+.current-player h1 {
+  font-weight: bold;
+}
+
+.current-headline {
+  font-size: 1.4rem;
+}
+.current-score {
+  font-size: 3rem;
+}
+.player-score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player-current-box {
+  width: 40%;
+  height: 15%;
+  background-color: #e44343;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+.player-score {
+  font-size: 6rem;
+  color: rgba(55, 239, 252, 0.747);
+}
+.player-name {
+  font-size: 3rem;
+  font-weight: 400;
+}

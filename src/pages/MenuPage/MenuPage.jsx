@@ -7,7 +7,7 @@ import './MenuPage.css'
 
 const MenuPage = ({onStartGame}) => {
 
-  const [targetScore, setTargetScore] = useState(null);
+  const [targetScore, setTargetScore] = useState('');
   const [error, setError] = useState(false);
 
   const handleStartGame = () => {
