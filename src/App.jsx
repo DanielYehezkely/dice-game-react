@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import GamePage from "./pages/GamePage/GamePage";
 import MenuPage from "./pages/MenuPage/MenuPage";
 
+import { gameAudio } from "./models/audio/audio";
+
 function App() {
   const [showGamePage, setShowGamePage] = useState(false);
   const [targetScore, setTargetScore] = useState(null);
@@ -14,9 +16,7 @@ function App() {
 
   useEffect(() => {
     if (showGamePage) {
-      const audio = new Audio("/public/assets/audio/Game-Main-Theme.mp3");
-      audio.volume = 0.3;
-      audio.play();
+      gameAudio.play()
     }
   }, [showGamePage]);
 
