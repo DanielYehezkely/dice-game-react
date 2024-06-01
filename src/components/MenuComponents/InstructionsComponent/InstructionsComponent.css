@@ -1,0 +1,7 @@
+.menu-box ul {
+  list-style-type: circle;
+}
+.menu-box ul li {
+  font-size: 1.4rem;
+  font-weight: 500;
+}

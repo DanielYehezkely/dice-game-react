@@ -1,3 +1,5 @@
+import MenuPage from "./pages/MenuPage/MenuPage";
+
 
 
 function App() {
@@ -5,7 +7,9 @@ function App() {
 
   return (
     <>
-   
+   <div className="hero-container">
+    <MenuPage/>
+   </div>
     </>
   );
 }

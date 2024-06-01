@@ -1,0 +1,31 @@
+.dice-headline{
+  width: 80%;
+  height: 15%;
+  font-size: 5rem;
+  text-align: center;
+}
+.dice-headline img {
+  box-shadow: none;
+}
+.menu-box {
+  width: 80%;
+  height: 80%;
+  background: wheat;
+  border: 0.5rem solid black;
+  border-radius: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding-top: 2rem;
+}
+
+.starter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: 30%;
+  gap: 1rem;
+}
