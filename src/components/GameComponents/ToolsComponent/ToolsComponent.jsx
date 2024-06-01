@@ -1,26 +1,19 @@
 import React from "react";
 
 import ToolsButton from "./ToolsButton/ToolsButton";
-import { buttons } from "../../../data/toolsButtons";
+import { BUTTONS } from "../../../constants/toolsButtons";
 import Dice from "./Dice/Dice";
 
-
-const ToolsComponent = () => {
-
-  const diceValue = () =>{
-    return (Math.floor(Math.random() * 6) + 1)
-  }
-  
-  const newGame = () => {
-    window.location.reload()
-  }
-  
+const ToolsComponent = ({ rollDice, holdScore, newGame, diceValues }) => {
   const buttonActions = {
     'NEW GAME': newGame,
+    'ROLL DICE': rollDice,
+    'HOLD': holdScore
   };
+
   return (
     <div className="dices-and-btns">
-      {buttons.map(button => (
+      {BUTTONS.map(button => (
         <ToolsButton
           key={button.name}
           onClick={buttonActions[button.name]}
@@ -28,10 +21,10 @@ const ToolsComponent = () => {
           icon={button.icon}
         />
       ))}
-      <Dice diceValue={diceValue()}/>
-      <Dice diceValue={diceValue()}/>
+      <Dice value={diceValues[0]} />
+      <Dice value={diceValues[1]} />
     </div>
-  )
+  );
 };
 
 export default ToolsComponent;
