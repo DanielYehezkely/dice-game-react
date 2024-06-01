@@ -5,7 +5,7 @@ import App from './App.jsx'
 
 import './styles/reset.css'
 import './styles/style.css'
-import './styles/media.css'
+import './styles/mediaQueries.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

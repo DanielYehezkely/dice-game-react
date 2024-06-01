@@ -14,7 +14,6 @@ const GamePage = ({ targetScore }) => {
     diceValues,
     rollDice,
     holdScore,
-    winner
   } = useGameLogic(targetScore);
 
   return (

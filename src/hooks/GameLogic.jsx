@@ -9,8 +9,16 @@ export const useGameLogic = (targetScore) => {
   const [diceValues, setDiceValues] = useState([1, 1]);
   const [winner, setWinner] = useState(null);
 
-  const rollDice = () => {
+  const playDiceAudio = () => {
     diceAudio.play();
+  };
+
+  const playWinnerAudio = () => {
+    winnerAudio.play();
+  };
+
+  const rollDice = () => {
+    playDiceAudio();
     const newDiceValues = [Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6)];
     setDiceValues(newDiceValues);
     setCurrentScores(prevScores => {
@@ -20,24 +28,27 @@ export const useGameLogic = (targetScore) => {
     });
   };
 
+  const checkForWinner = (updatedPlayerScores) => {
+    if (updatedPlayerScores[currentPlayer] >= targetScore) {
+      setWinner(currentPlayer);
+    }
+  };
+
   const holdScore = () => {
     setPlayerScores(prevScores => {
       const newScores = [...prevScores];
       newScores[currentPlayer] += currentScores[currentPlayer];
+      checkForWinner(newScores);
       return newScores;
     });
 
-    if (playerScores[currentPlayer] + currentScores[currentPlayer] >= targetScore) {
-      setWinner(currentPlayer);
-    } else {
-      setCurrentScores([0, 0]);
-      setCurrentPlayer(prevPlayer => (prevPlayer === 0 ? 1 : 0));
-    }
+    setCurrentScores([0, 0]);
+    setCurrentPlayer(prevPlayer => (prevPlayer === 0 ? 1 : 0));
   };
 
   useEffect(() => {
     if (winner !== null) {
-      winnerAudio.play();
+      playWinnerAudio();
       setTimeout(() => {
         alert(`Player ${winner + 1} wins!`);
         window.location.reload();
@@ -50,13 +61,7 @@ export const useGameLogic = (targetScore) => {
     currentScores,
     currentPlayer,
     diceValues,
-    winner,
     rollDice,
-    holdScore,
-    setPlayerScores,
-    setCurrentScores,
-    setCurrentPlayer,
-    setDiceValues,
-    setWinner
+    holdScore
   };
 };
